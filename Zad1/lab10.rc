@@ -1,0 +1,68 @@
+#define BS_CENTER 0x300L
+#define BS_PUSHBUTTON 0x0L
+#define ES_LEFT 0x0L
+#define SS_LEFT 0x0L
+#define WS_BORDER 0x800000L
+#define WS_CHILD 0x40000000L
+#define WS_CAPTION 0x0C00000L
+#define WS_MINIMIZEBOX 0x00020000L 
+#define WS_MAXIMIZEBOX 0x00010000L
+#define WS_POPUP 0x80000000L
+#define WS_SYSMENU 0x00080000L
+#define WS_TABSTOP 0x10000L 
+#define WS_VISIBLE 0x10000000L
+#define CBS_DROPDOWNLIST 3h
+#define CBS_HASSTRINGS 200h
+//--------------------------------
+#define STR1 1  // 1 to identyfikator wiersza
+#define STR2 2  // 2 to identyfikator wiersza
+#define STR3 3  // 3 to identyfikator wiersza
+#define STR4 4  // 3 to identyfikator wiersza
+#define IDI_ICON1 11
+#define IDI_ICUR1 12
+
+DLG1 DIALOG 0, 0, 200, 150
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "Modalne okno dialogowe"
+FONT 10, "Arial"
+{
+ CONTROL "",1,"EDIT",ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP,20,16,104,16
+  // 1 to identyfikator obiektu graficznego
+
+ CONTROL "Tekst",2,"STATIC",SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER,20,40,104,16
+  // 2 to identyfikator obiektu graficznego
+ CONTROL "Start",105,"BUTTON",BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP,20,60,104,16
+  // 105 to identyfikator obiektu graficznego
+ CONTROL "test", 106, "COMBOBOX", WS_VISIBLE | WS_CHILD | WS_TABSTOP | WS_BORDER | CBS_DROPDOWNLIST | CBS_HASSTRINGS, 20, 80, 104, 16
+	 CONTROL "Kopiuj", 107, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 20, 120, 50, 10 //
+	 CONTROL "", 110, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 20, 100, 104, 16
+	 // 1 to identyfikator obiektu graficznego
+}
+STRINGTABLE
+{
+ STR1 "Komunikat"
+ STR2 "B³¹d!"
+ STR3 "Hubert Zablocki"
+ STR4 ""
+}
+IDI_ICON1 ICON "ikona.ico"
+IDI_ICUR1 CURSOR "kursor.cur"
+MENU1 MENU
+{
+ POPUP "Menu"
+ {
+  POPUP "Plik"
+  {
+	MENUITEM "Zamknij", 150 // 102 to identyfikator punktu menu
+	MENUITEM "Zapisz", 151 // 103 to identyfikator punktu menu
+	MENUITEM "Otworz", 152 // 103 to identyfikator punktu menu
+
+  }
+  POPUP "Edycja"
+  {
+   MENUITEM "Wyczysc", 102 // 102 to identyfikator punktu menu
+  }
+ }
+ MENUITEM "Punkt 2", 104 // 104 to identyfikator punktu menu
+ MENUITEM "Wyjœcie", 105 // 105 to identyfikator punktu menu
+} 
