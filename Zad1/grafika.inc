@@ -856,6 +856,7 @@ CopyFileA PROTO :DWORD,:DWORD,:DWORD
     ;;BOOL bFailIfExists 	// flag for operation if file exists  
     ;;);
 GetLastError PROTO
+SetFilePointer PROTO :DWORD, :DWORD, :DWORD, :DWORD
 
 GetTickCount PROTO
 ;--- z pliku masm32.lib ---
