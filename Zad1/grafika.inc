@@ -643,6 +643,9 @@ RegisterClassA PROTO :DWORD
 ShowWindow PROTO :DWORD,:DWORD
 TranslateMessage PROTO :DWORD
 UpdateWindow PROTO :DWORD
+
+atoi PROTO :DWORD
+
 wsprintfA PROTO C lpOut:DWORD, lpFmt:DWORD, arg:VARARG
      ;; int wsprintf(LPTSTR lpOut,// pointer to buffer for output 
      ;; LPCTSTR lpFmt,// pointer to format-control string 
